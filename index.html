@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Counter App</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="alert" class="alert">Min/Max exceeded</div>
+        <div class="inner-wrapper">
+            <div>
+                <button id="dec" class="button">-</button>
+            </div>
+            <div id="counter">0</div>
+            <div>
+                <button id="inc" class="button">+</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const alertElement = document.getElementById('alert')
+    const counter = document.getElementById('counter')
+    const decBtn = document.getElementById('dec')
+    const incBtn = document.getElementById('inc')
+    const condition = (val, cb) => {
+        if(val >= 1 && val <= 10) {
+            alertElement.style.display = 'none'
+            cb()
+        } else {
+            alertElement.style.display = 'block'
+        }
+    }
+    decBtn.addEventListener('click', ()=> {
+        const value = parseInt(counter.textContent)
+        condition(value-1, ()=>{
+            counter.textContent = value - 1
+        })
+    })
+    incBtn.addEventListener('click', ()=> {
+        const value = parseInt(counter.textContent)
+        condition(value+1, ()=>{
+            counter.textContent = value + 1
+        })
+    })
+</script>
+</html>

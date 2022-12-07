@@ -1,0 +1,36 @@
+.body {
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 30px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.inner-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+}
+
+.alert {
+    background-color: indianred;
+    border: 1px solid darkred;
+    border-radius: 4px;
+    font-size: 14px;
+    padding: 10px;
+    display: none;
+}
